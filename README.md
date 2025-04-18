@@ -2,7 +2,7 @@
 
 This is my personal **developer portfolio website**, showcasing my background, skills, certifications, and projects. Built to reflect my personality and technical stack, it's a one-stop place to get to know me professionally.
 
-![Portfolio Screenshot](src\assets\images\portfolio.jpg)
+![Portfolio Screenshot](src\assets\images\portfolio.png)
 
 ---
 
