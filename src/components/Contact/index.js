@@ -17,7 +17,7 @@ export default function Contact() {
     setLoading(true);
     e.preventDefault();
     const { username, email, message } = e.target.elements;
-    const serviceID = "service_5h92sdg";
+    const serviceID = "service_o5p03wh";
     const templateID = "template_sbkicq7"; // update with your template ID
     const publicKey = "mWRmgxXmF0YMIkh2o"; 
 

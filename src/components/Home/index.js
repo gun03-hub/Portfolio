@@ -38,7 +38,7 @@ export default function Home() {
           options={{
             strings: [
               "✋I'm Gunjan Arora",
-              "I'm an enthusiast Front-End 🌐developer",
+              "I'm an enthusiast Full Stack 🌐developer",
               "I'm a 2nd yr CS 👨‍🎓 in University of Delhi",
               "You can 📲 me through linkedln or ✉️",
             ],

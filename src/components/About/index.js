@@ -14,7 +14,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="min-h-screen bg-white flex flex-col text-center gap-5 text-black text-sm lg:text-lg  font-normal"
+      className="min-h-screen bg-#0b212d flex flex-col text-center gap-5 text-white text-sm lg:text-lg font-normal"
     >
       <div
         className="head text-3xl lg:text-5xl mt-12 font-bold"
@@ -22,17 +22,16 @@ export default function About() {
       >
         About Me
       </div>
-      <div className="flex flex-row  gap-6 ml-8">
+      <div className="flex flex-row gap-6 ml-12 md:ml-16 lg:ml-24">
         <div className="flex-col mt-14 flex flex-auto w-64 gap-6">
           <h3
             className="text-xl lg:text-3xl font-medium"
             data-aos={"fade-left"}
           >
-            I'm <span className="text-yellow-600">Gunjan Arora,</span> a Web
-            Enthusiast
+            I'm <span className="text-yellow-600">Gunjan Arora,</span> a Full Stack Developer
           </h3>
           <p
-            className="pt-5 leading-7 text-slate-900 text-justify"
+            className="pt-5 leading-7 text-slate-200 text-justify"
             data-aos={"fade-left"}
           >
             I love playing music, sketching and exploring nature. I am
@@ -40,7 +39,7 @@ export default function About() {
             years old.I love exploring new technologies.
           </p>
           <p
-            className="text-justify leading-7 text-slate-900"
+            className="text-justify leading-7 text-slate-200"
             data-aos={"fade-right"}
           >
             I am currently looking for jobs.I am specialized in React.js, Node.js, Tailwind, Bootstrap and many more.I am also looking to collaborate in open-source projects.
@@ -69,7 +68,7 @@ export default function About() {
           <a
             href={require("../../assets/files/Resume.pdf")}
             download={"Gunjan's Resume"}
-            target="_blank"
+            target="_blank" 
             rel="noreferrer"
             className="py-1 md:py-2 lg:py-3 mt-3 lg:mt-5 text-white mx-auto px-4  lg:px-9 bg-blue-600 border-2 w-fit border-blue-500 rounded-3xl  hover:-translate-y-1.5 duration-[350ms] hover:duration-[350ms] hover:bg-blue-800 hover:scale-[1.023] focus:bg-blue-800 sm:text-xl  animate-zoomy"
           >
