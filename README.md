@@ -2,7 +2,7 @@
 
 This is my personal **developer portfolio website**, showcasing my background, skills, certifications, and projects. Built to reflect my personality and technical stack, it's a one-stop place to get to know me professionally.
 
-![Portfolio Screenshot](src\assets\images\portfolio.png)
+![Portfolio Screenshot](src\assets\images\portfolio.jpg)
 
 ---
 
@@ -81,7 +81,7 @@ The app will run on [http://localhost:3000](http://localhost:3000)
 ## 📌 Live Preview
 
 🚀 [View Live Site](https://gunjanarora.netlify.app/#/) 
-📄 [Download Resume (PDF)](src/assets/files/Gunjan_Resume.pdf)
+📄 [Download Resume (PDF)](src/assets/files/Resume.pdf)
 
 ---
 
