@@ -1,65 +1,66 @@
 import Tilt from "react-parallax-tilt";
+import LaunchIcon from "@mui/icons-material/Launch";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
-export default function work({ title, desc, tags, link, code, img }) {
+export default function Work({ title, desc, tags, link, code, img }) {
   return (
     <Tilt
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
-      className="bg-[#0b212d]  rounded-2xl max-w-[362px]  h-full bg-gradient-to-r from-green-700 to-pink-800 p-[1px]"
+      tiltMaxAngleX={5}
+      tiltMaxAngleY={5}
+      scale={1.02}
+      transitionSpeed={300}
+      className="h-full"
     >
-      <div className="bg-[#0b212d] w-full h-full rounded-2xl p-4 flex flex-col justify-between">
-        <div>
-          <div className="relative w-full rounded-2xl">
-            <img
-              src={img}
-              alt={title}
-              className="w-full h-full max-h-[200px] min-h-[200px] rounded-[10px] object-cover border-[1px] border-secondary"
-            />
-            <div className="absolute inset-0 flex justify-end m-3 ">
-              <div
+      <div className="project-card h-full flex flex-col">
+        <div className="relative overflow-hidden group/image">
+          <img
+            src={img}
+            alt={title}
+            className="w-full h-52 object-cover transition-transform duration-500 group-hover/image:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300" />
+          
+          <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover/image:opacity-100 transition-all duration-300 transform translate-y-2 group-hover/image:translate-y-0">
+            {link && (
+              <button
                 onClick={() => window.open(link, "_blank")}
-                className="bg-slate-800 w-9 h-9 rounded-full border-[1px] border-secondary flex items-center justify-center cursor-pointer mr-2"
+                className="w-10 h-10 rounded-lg bg-dark-800/90 backdrop-blur-sm border border-dark-600 flex items-center justify-center text-white hover:bg-primary-500 hover:border-primary-500 transition-all"
+                title="Visit Site"
               >
-                <img
-                  src={require("../../assets/images/gotosite.webp")}
-                  alt={"gotosite"}
-                  className="w-4/5 h-4/5 object-contain"
-                />
-              </div>
-              <div
+                <LaunchIcon className="text-lg" />
+              </button>
+            )}
+            {code && (
+              <button
                 onClick={() => window.open(code, "_blank")}
-                className="bg-slate-800 w-9 h-9 rounded-full border-[1px] border-secondary flex items-center justify-center cursor-pointer "
+                className="w-10 h-10 rounded-lg bg-dark-800/90 backdrop-blur-sm border border-dark-600 flex items-center justify-center text-white hover:bg-primary-500 hover:border-primary-500 transition-all"
+                title="View Code"
               >
-                <img
-                  src={require("../../assets/images/github.webp")}
-                  alt={"github"}
-                  className="w-3/5 h-3/5 lg:w-4/5 lg:h-4/5 object-contain"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="mt-5">
-            <h3 className="text-white font-bold text-[20px] lg:text-[24px]">
-              {title}
-            </h3>
-            <p className="mt-2 text-secondary text-[10px] lg:text-[14px]">
-              {desc}
-            </p>
+                <GitHubIcon className="text-lg" />
+              </button>
+            )}
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2 text-[10px] lg:text-[14px]">
-          {tags.map((tag) => (
-            <p
-              key={tag.name}
-              className={`font-medium text-${tag.color} py-0.5 px-1 bg-slate-800 rounded-sm shadow`}
-            >
-              {tag.name}
-            </p>
-          ))}
+        <div className="p-6 flex flex-col flex-1">
+          <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">
+            {title}
+          </h3>
+          
+          <p className="text-dark-400 text-sm leading-relaxed mb-4 flex-1 line-clamp-3">
+            {desc.length > 150 ? `${desc.substring(0, 150)}...` : desc}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-dark-700">
+            {tags.slice(0, 4).map((tag, index) => (
+              <span
+                key={index}
+                className="px-2.5 py-1 text-xs font-medium rounded-md bg-dark-700/50 text-dark-200 border border-dark-600"
+              >
+                {tag.name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </Tilt>

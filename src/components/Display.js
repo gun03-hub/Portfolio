@@ -1,4 +1,5 @@
 import "../App.css";
+import Navigation from "./Navigation";
 import Home from "./Home";
 import About from "./About";
 import Resume from "./Resume";
@@ -7,7 +8,8 @@ import Contact from "./Contact";
 
 export default function Display() {
   return (
-    <div className="lg:pl-[25%]    w-screen back text-white  ">
+    <div className="w-full text-white">
+      <Navigation />
       <Home />
       <About />
       <Resume />
