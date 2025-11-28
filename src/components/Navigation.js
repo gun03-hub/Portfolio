@@ -34,6 +34,17 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (sectionId) => {
     setIsMobileMenuOpen(false);
     if (sectionId === "home") {
@@ -55,111 +66,129 @@ export default function Navigation() {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-dark-900/90 backdrop-blur-xl border-b border-dark-700/50 py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <NavLink
-          to="/"
-          onClick={() => scrollToSection("home")}
-          className="flex items-center gap-3 group"
-        >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-purple flex items-center justify-center text-white font-bold text-lg">
-            G
-          </div>
-          <span className="text-xl font-display font-semibold text-white group-hover:text-primary-400 transition-colors">
-            Gunjan<span className="text-primary-400">.</span>
-          </span>
-        </NavLink>
-
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`nav-link ${activeSection === item.id ? "active text-primary-400" : ""}`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href="https://github.com/gun03-hub"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
-            title="GitHub"
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-dark-900/90 backdrop-blur-xl border-b border-dark-700/50 py-4"
+            : "bg-transparent py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          <NavLink
+            to="/"
+            onClick={() => scrollToSection("home")}
+            className="flex items-center gap-3 group"
           >
-            <GitHubIcon />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gunjan-arora-4248462a9/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
-            title="LinkedIn"
-          >
-            <LinkedInIcon />
-          </a>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="btn-primary text-sm"
-          >
-            Let's Talk
-          </button>
-        </div>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-purple flex items-center justify-center text-white font-bold text-lg">
+              G
+            </div>
+            <span className="text-xl font-display font-semibold text-white group-hover:text-primary-400 transition-colors">
+              Gunjan<span className="text-primary-400">.</span>
+            </span>
+          </NavLink>
 
-        <button
-          className="md:hidden p-2 text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
-      </div>
-
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-dark-900/95 backdrop-blur-xl border-b border-dark-700/50">
-          <div className="px-6 py-4 flex flex-col gap-4">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-left py-2 ${
-                  activeSection === item.id
-                    ? "text-primary-400"
-                    : "text-dark-300 hover:text-white"
-                } transition-colors`}
+                className={`nav-link ${activeSection === item.id ? "active text-primary-400" : ""}`}
               >
                 {item.label}
               </button>
             ))}
-            <div className="flex items-center gap-4 pt-4 border-t border-dark-700">
+          </div>
+
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="https://github.com/gun03-hub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
+              title="GitHub"
+            >
+              <GitHubIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gunjan-arora-4248462a9/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
+              title="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="btn-primary text-sm"
+            >
+              Let's Talk
+            </button>
+          </div>
+
+          <button
+            className="md:hidden p-2 text-white z-50"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
+      </nav>
+
+      {isMobileMenuOpen && (
+        <div 
+          className="md:hidden fixed inset-0 z-40 bg-dark-950/95 backdrop-blur-xl"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <div 
+            className="flex flex-col items-center justify-center h-full gap-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {navItems.map((item, index) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-2xl font-display font-semibold transition-all duration-300 ${
+                  activeSection === item.id
+                    ? "text-primary-400"
+                    : "text-white hover:text-primary-400"
+                }`}
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                {item.label}
+              </button>
+            ))}
+            
+            <div className="flex items-center gap-6 mt-8">
               <a
                 href="https://github.com/gun03-hub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
+                className="p-3 text-dark-300 hover:text-primary-400 transition-colors"
               >
-                <GitHubIcon />
+                <GitHubIcon className="text-3xl" />
               </a>
               <a
                 href="https://www.linkedin.com/in/gunjan-arora-4248462a9/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
+                className="p-3 text-dark-300 hover:text-primary-400 transition-colors"
               >
-                <LinkedInIcon />
+                <LinkedInIcon className="text-3xl" />
               </a>
             </div>
+
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="btn-primary mt-4"
+            >
+              Let's Talk
+            </button>
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }

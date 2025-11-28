@@ -103,11 +103,12 @@
   }
 
   .project-card {
-    @apply glass-card overflow-hidden group hover:border-primary-500/30 transition-all duration-500;
+    @apply glass-card overflow-hidden hover:border-primary-500/30 transition-all duration-500;
   }
 
   .project-card:hover {
-    @apply shadow-card-hover transform -translate-y-2;
+    @apply shadow-card-hover;
+    transform: translateY(-8px);
   }
 
   .tech-tag {
