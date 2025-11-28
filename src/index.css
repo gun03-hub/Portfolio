@@ -7,11 +7,21 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
   
   body {
     @apply bg-dark-950 text-white antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
@@ -19,7 +29,13 @@
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
+  }
+
+  @media (min-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
   }
 
   ::-webkit-scrollbar-track {
@@ -33,19 +49,23 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary-500;
   }
+
+  input, textarea, button, select {
+    font-size: 16px;
+  }
 }
 
 @layer components {
   .section-heading {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold font-display bg-gradient-to-r from-white via-primary-200 to-primary-400 bg-clip-text text-transparent;
+    @apply text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-bold font-display bg-gradient-to-r from-white via-primary-200 to-primary-400 bg-clip-text text-transparent leading-tight;
   }
 
   .section-subheading {
-    @apply text-lg md:text-xl text-dark-300 max-w-2xl;
+    @apply text-base xs:text-lg md:text-xl text-dark-300 max-w-2xl px-2 xs:px-0;
   }
 
   .glass-card {
-    @apply bg-dark-800/50 backdrop-blur-xl border border-dark-700/50 rounded-2xl;
+    @apply bg-dark-800/50 backdrop-blur-xl border border-dark-700/50 rounded-xl xs:rounded-2xl;
   }
 
   .gradient-border {
@@ -65,19 +85,20 @@
   }
 
   .btn-primary {
-    @apply px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold rounded-xl 
+    @apply px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold rounded-xl 
            hover:from-primary-500 hover:to-primary-400 transform hover:-translate-y-0.5 
-           transition-all duration-300 shadow-lg hover:shadow-primary-500/25;
+           transition-all duration-300 shadow-lg hover:shadow-primary-500/25 text-sm xs:text-base
+           active:scale-95 touch-manipulation;
   }
 
   .btn-outline {
-    @apply px-8 py-3 border-2 border-primary-500/50 text-primary-400 font-semibold rounded-xl
+    @apply px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 border-2 border-primary-500/50 text-primary-400 font-semibold rounded-xl
            hover:bg-primary-500/10 hover:border-primary-400 transform hover:-translate-y-0.5
-           transition-all duration-300;
+           transition-all duration-300 text-sm xs:text-base active:scale-95 touch-manipulation;
   }
 
   .nav-link {
-    @apply relative text-dark-300 hover:text-white transition-colors duration-300 font-medium;
+    @apply relative text-dark-300 hover:text-white transition-colors duration-300 font-medium py-2 touch-manipulation;
   }
 
   .nav-link::after {
@@ -95,7 +116,7 @@
   }
 
   .skill-bar {
-    @apply h-2 rounded-full bg-dark-700 overflow-hidden;
+    @apply h-2 xs:h-2.5 rounded-full bg-dark-700 overflow-hidden;
   }
 
   .skill-bar-fill {
@@ -106,13 +127,20 @@
     @apply glass-card overflow-hidden hover:border-primary-500/30 transition-all duration-500;
   }
 
-  .project-card:hover {
-    @apply shadow-card-hover;
-    transform: translateY(-8px);
+  @media (hover: hover) and (pointer: fine) {
+    .project-card:hover {
+      @apply shadow-card-hover;
+      transform: translateY(-8px);
+    }
   }
 
   .tech-tag {
-    @apply px-3 py-1 text-xs font-medium rounded-full bg-primary-500/10 text-primary-300 border border-primary-500/20;
+    @apply px-2 xs:px-3 py-1 text-xs font-medium rounded-full bg-primary-500/10 text-primary-300 border border-primary-500/20;
+  }
+
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 

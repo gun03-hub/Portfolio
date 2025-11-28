@@ -5,6 +5,7 @@ import About from "./About";
 import Resume from "./Resume";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import ScrollToTop from "./ScrollToTop";
 
 export default function Display() {
   return (
@@ -15,6 +16,7 @@ export default function Display() {
       <Resume />
       <Projects />
       <Contact />
+      <ScrollToTop />
     </div>
   );
 }

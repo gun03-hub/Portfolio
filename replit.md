@@ -79,7 +79,24 @@ Configured for Replit static deployment:
 - Build: `npm run build`
 - Public directory: `build`
 
+## Responsive Design Features
+- **Breakpoints**: Custom breakpoints for all device sizes (xxs: 320px, xs: 375px, sm: 640px, md: 768px, lg: 1024px, xl: 1280px)
+- **Mobile-first approach**: All components scale up from smallest screens
+- **iOS safe-area support**: Proper handling for notch devices and home indicator
+- **Touch-friendly**: All interactive elements have proper touch targets (44px minimum)
+- **Adaptive typography**: Font sizes scale appropriately across all breakpoints
+- **Responsive grids**: Layout adjusts from single column on mobile to multi-column on desktop
+- **Touch interactions**: Disabled hover effects on touch devices, added active states
+- **ScrollToTop button**: Fixed button for easy navigation back to top on all devices
+
 ## Recent Changes
+- November 28, 2025: Major responsive design improvements
+  - Enhanced all sections for mobile, tablet, and desktop
+  - Added custom breakpoints for extra-small devices (320-375px)
+  - Improved touch targets and interactions
+  - Added ScrollToTop component for mobile convenience
+  - iOS safe-area support for notch devices
+  - Better typography scaling across all screen sizes
 - November 28, 2025: Complete redesign with modern dark bluish theme
   - New horizontal navigation replacing sidebar
   - Glassmorphism card design

@@ -3,16 +3,16 @@ import { projects } from "../../constants";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="section-heading mb-4">Featured Projects</h2>
+    <section id="projects" className="py-12 xs:py-16 md:py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 xs:px-6">
+        <div className="text-center mb-10 xs:mb-12 md:mb-16" data-aos="fade-up">
+          <h2 className="section-heading mb-3 xs:mb-4">Featured Projects</h2>
           <p className="section-subheading mx-auto">
             A showcase of my recent work and personal projects
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 md:gap-8">
           {projects.slice(0, 6).map((project, index) => (
             <div
               key={index}
@@ -32,7 +32,7 @@ export default function Projects() {
         </div>
 
         {projects.length > 6 && (
-          <div className="text-center mt-12" data-aos="fade-up">
+          <div className="text-center mt-8 xs:mt-10 md:mt-12" data-aos="fade-up">
             <a
               href="https://github.com/gun03-hub"
               target="_blank"

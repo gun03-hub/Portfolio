@@ -89,72 +89,72 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="section-heading mb-4">Get In Touch</h2>
+    <section id="contact" className="py-12 xs:py-16 md:py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 xs:px-6">
+        <div className="text-center mb-10 xs:mb-12 md:mb-16" data-aos="fade-up">
+          <h2 className="section-heading mb-3 xs:mb-4">Get In Touch</h2>
           <p className="section-subheading mx-auto">
             Have a project in mind or want to collaborate? Let's talk!
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 xs:gap-8 lg:gap-12 items-start">
           <div data-aos="fade-right">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-6">
+            <div className="glass-card p-5 xs:p-6 md:p-8">
+              <h3 className="text-xl xs:text-2xl font-display font-bold text-white mb-4 xs:mb-6">
                 Send Me a Message
               </h3>
 
               {!mailSent ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 xs:space-y-6">
                   <div>
-                    <label className="block text-dark-300 text-sm font-medium mb-2">
+                    <label className="block text-dark-300 text-xs xs:text-sm font-medium mb-1.5 xs:mb-2">
                       Your Name
                     </label>
                     <div className="relative">
-                      <PersonIcon className="absolute left-4 top-1/2 -translate-y-1/2 text-dark-500" />
+                      <PersonIcon className="absolute left-3 xs:left-4 top-1/2 -translate-y-1/2 text-dark-500 text-lg xs:text-xl" />
                       <input
                         id="username"
                         name="username"
                         type="text"
                         required
                         placeholder="John Doe"
-                        className="w-full pl-12 pr-4 py-3 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                        className="w-full pl-10 xs:pl-12 pr-4 py-2.5 xs:py-3 bg-dark-800 border border-dark-600 rounded-lg xs:rounded-xl text-white text-sm xs:text-base placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-dark-300 text-sm font-medium mb-2">
+                    <label className="block text-dark-300 text-xs xs:text-sm font-medium mb-1.5 xs:mb-2">
                       Email Address
                     </label>
                     <div className="relative">
-                      <EmailIcon className="absolute left-4 top-1/2 -translate-y-1/2 text-dark-500" />
+                      <EmailIcon className="absolute left-3 xs:left-4 top-1/2 -translate-y-1/2 text-dark-500 text-lg xs:text-xl" />
                       <input
                         id="email"
                         name="email"
                         type="email"
                         required
                         placeholder="john@example.com"
-                        className="w-full pl-12 pr-4 py-3 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                        className="w-full pl-10 xs:pl-12 pr-4 py-2.5 xs:py-3 bg-dark-800 border border-dark-600 rounded-lg xs:rounded-xl text-white text-sm xs:text-base placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-dark-300 text-sm font-medium mb-2">
+                    <label className="block text-dark-300 text-xs xs:text-sm font-medium mb-1.5 xs:mb-2">
                       Your Message
                     </label>
                     <div className="relative">
-                      <MessageIcon className="absolute left-4 top-4 text-dark-500" />
+                      <MessageIcon className="absolute left-3 xs:left-4 top-3 xs:top-4 text-dark-500 text-lg xs:text-xl" />
                       <textarea
                         id="message"
                         name="message"
                         required
                         minLength={10}
-                        rows="5"
+                        rows="4"
                         placeholder="Tell me about your project..."
-                        className="w-full pl-12 pr-4 py-3 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
+                        className="w-full pl-10 xs:pl-12 pr-4 py-2.5 xs:py-3 bg-dark-800 border border-dark-600 rounded-lg xs:rounded-xl text-white text-sm xs:text-base placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none"
                       />
                     </div>
                   </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                   >
                     {loading ? (
                       <>
-                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                        <svg className="animate-spin h-4 w-4 xs:h-5 xs:w-5" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
@@ -174,21 +174,21 @@ export default function Contact() {
                       </>
                     ) : (
                       <>
-                        <SendIcon />
+                        <SendIcon className="text-lg xs:text-xl" />
                         Send Message
                       </>
                     )}
                   </button>
                 </form>
               ) : (
-                <div className="text-center py-12">
-                  <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircleIcon className="text-5xl text-green-500" />
+                <div className="text-center py-8 xs:py-12">
+                  <div className="w-16 h-16 xs:w-20 xs:h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4 xs:mb-6">
+                    <CheckCircleIcon className="text-4xl xs:text-5xl text-green-500" />
                   </div>
-                  <h4 className="text-xl font-semibold text-white mb-2">
+                  <h4 className="text-lg xs:text-xl font-semibold text-white mb-2">
                     Message Sent Successfully!
                   </h4>
-                  <p className="text-dark-400">
+                  <p className="text-dark-400 text-sm xs:text-base">
                     Thank you for reaching out. I'll get back to you soon.
                   </p>
                 </div>
@@ -196,29 +196,29 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="space-y-8" data-aos="fade-left">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-6">
+          <div className="space-y-4 xs:space-y-6 lg:space-y-8" data-aos="fade-left">
+            <div className="glass-card p-5 xs:p-6 md:p-8">
+              <h3 className="text-xl xs:text-2xl font-display font-bold text-white mb-4 xs:mb-6">
                 Contact Information
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3 xs:space-y-4">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center text-primary-400">
-                      {info.icon}
+                  <div key={index} className="flex items-center gap-3 xs:gap-4">
+                    <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-primary-500/20 flex items-center justify-center text-primary-400 flex-shrink-0">
+                      <span className="text-lg xs:text-xl">{info.icon}</span>
                     </div>
-                    <div>
-                      <div className="text-sm text-dark-400">{info.label}</div>
+                    <div className="min-w-0">
+                      <div className="text-xs xs:text-sm text-dark-400">{info.label}</div>
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-white hover:text-primary-400 transition-colors"
+                          className="text-sm xs:text-base text-white hover:text-primary-400 transition-colors break-all"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <div className="text-white">{info.value}</div>
+                        <div className="text-sm xs:text-base text-white">{info.value}</div>
                       )}
                     </div>
                   </div>
@@ -226,32 +226,33 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="glass-card p-8">
-              <h3 className="text-xl font-display font-bold text-white mb-6">
+            <div className="glass-card p-5 xs:p-6 md:p-8">
+              <h3 className="text-lg xs:text-xl font-display font-bold text-white mb-4 xs:mb-6">
                 Connect With Me
               </h3>
               
-              <div className="flex gap-4">
+              <div className="flex gap-3 xs:gap-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-dark-700 border border-dark-600 flex items-center justify-center text-dark-300 hover:bg-primary-500 hover:border-primary-500 hover:text-white transition-all"
+                    className="w-11 h-11 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-dark-700 border border-dark-600 flex items-center justify-center text-dark-300 hover:bg-primary-500 hover:border-primary-500 hover:text-white transition-all touch-manipulation active:scale-95"
                     title={social.label}
+                    aria-label={social.label}
                   >
-                    {social.icon}
+                    <span className="text-xl xs:text-2xl">{social.icon}</span>
                   </a>
                 ))}
               </div>
             </div>
 
-            <div className="glass-card p-8 bg-gradient-to-br from-primary-600/20 to-accent-purple/20">
-              <h3 className="text-xl font-display font-bold text-white mb-4">
+            <div className="glass-card p-5 xs:p-6 md:p-8 bg-gradient-to-br from-primary-600/20 to-accent-purple/20">
+              <h3 className="text-lg xs:text-xl font-display font-bold text-white mb-3 xs:mb-4">
                 Let's Build Something Amazing
               </h3>
-              <p className="text-dark-300 mb-6">
+              <p className="text-dark-300 text-sm xs:text-base mb-4 xs:mb-6">
                 I'm currently available for freelance work and exciting opportunities. 
                 If you have a project that needs expertise, let's discuss it!
               </p>
@@ -266,8 +267,8 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-dark-800 text-center" data-aos="fade-up">
-          <p className="text-dark-400 text-sm">
+        <div className="mt-10 xs:mt-12 md:mt-16 pt-6 xs:pt-8 border-t border-dark-800 text-center" data-aos="fade-up">
+          <p className="text-dark-400 text-xs xs:text-sm">
             &copy; {new Date().getFullYear()} Gunjan Arora. All rights reserved.
           </p>
         </div>

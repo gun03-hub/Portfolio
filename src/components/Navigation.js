@@ -74,21 +74,21 @@ export default function Navigation() {
             : "bg-transparent py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 xs:px-6 flex items-center justify-between">
           <NavLink
             to="/"
             onClick={() => scrollToSection("home")}
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-2 xs:gap-3 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-purple flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-8 h-8 xs:w-10 xs:h-10 rounded-lg xs:rounded-xl bg-gradient-to-br from-primary-500 to-accent-purple flex items-center justify-center text-white font-bold text-base xs:text-lg">
               G
             </div>
-            <span className="text-xl font-display font-semibold text-white group-hover:text-primary-400 transition-colors">
+            <span className="text-lg xs:text-xl font-display font-semibold text-white group-hover:text-primary-400 transition-colors">
               Gunjan<span className="text-primary-400">.</span>
             </span>
           </NavLink>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -100,13 +100,14 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3 lg:gap-4">
             <a
               href="https://github.com/gun03-hub"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
+              className="p-2 text-dark-400 hover:text-primary-400 transition-colors touch-manipulation"
               title="GitHub"
+              aria-label="GitHub profile"
             >
               <GitHubIcon />
             </a>
@@ -114,8 +115,9 @@ export default function Navigation() {
               href="https://www.linkedin.com/in/gunjan-arora-4248462a9/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
+              className="p-2 text-dark-400 hover:text-primary-400 transition-colors touch-manipulation"
               title="LinkedIn"
+              aria-label="LinkedIn profile"
             >
               <LinkedInIcon />
             </a>
@@ -128,29 +130,30 @@ export default function Navigation() {
           </div>
 
           <button
-            className="md:hidden p-2 text-white z-50"
+            className="md:hidden p-2.5 text-white z-50 touch-manipulation active:scale-95 transition-transform"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+            {isMobileMenuOpen ? <CloseIcon className="text-2xl" /> : <MenuIcon className="text-2xl" />}
           </button>
         </div>
       </nav>
 
       {isMobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 z-40 bg-dark-950/95 backdrop-blur-xl"
+          className="md:hidden fixed inset-0 z-40 bg-dark-950/98 backdrop-blur-xl"
           onClick={() => setIsMobileMenuOpen(false)}
+          style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           <div 
-            className="flex flex-col items-center justify-center h-full gap-8"
+            className="flex flex-col items-center justify-center h-full gap-6 xs:gap-8 px-4"
             onClick={(e) => e.stopPropagation()}
           >
             {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-2xl font-display font-semibold transition-all duration-300 ${
+                className={`text-xl xs:text-2xl font-display font-semibold transition-all duration-300 py-2 px-4 touch-manipulation active:scale-95 ${
                   activeSection === item.id
                     ? "text-primary-400"
                     : "text-white hover:text-primary-400"
@@ -161,22 +164,24 @@ export default function Navigation() {
               </button>
             ))}
             
-            <div className="flex items-center gap-6 mt-8">
+            <div className="flex items-center gap-5 xs:gap-6 mt-6 xs:mt-8">
               <a
                 href="https://github.com/gun03-hub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 text-dark-300 hover:text-primary-400 transition-colors"
+                className="p-3 text-dark-300 hover:text-primary-400 transition-colors touch-manipulation active:scale-95"
+                aria-label="GitHub profile"
               >
-                <GitHubIcon className="text-3xl" />
+                <GitHubIcon className="text-2xl xs:text-3xl" />
               </a>
               <a
                 href="https://www.linkedin.com/in/gunjan-arora-4248462a9/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 text-dark-300 hover:text-primary-400 transition-colors"
+                className="p-3 text-dark-300 hover:text-primary-400 transition-colors touch-manipulation active:scale-95"
+                aria-label="LinkedIn profile"
               >
-                <LinkedInIcon className="text-3xl" />
+                <LinkedInIcon className="text-2xl xs:text-3xl" />
               </a>
             </div>
 
