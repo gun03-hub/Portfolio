@@ -41,6 +41,10 @@ outputType = "webview"
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 33731
+externalPort = 3000
+
 [deployment]
 deploymentTarget = "static"
 run = ["npm", "start"]
