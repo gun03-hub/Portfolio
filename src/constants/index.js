@@ -1,3 +1,54 @@
+export const experiences = [
+  {
+    role: "Web Developer",
+    company: "SPIE - The International Society",
+    location: "Delhi, India",
+    period: "Jan 2024 – Present",
+    type: "current",
+    highlights: [
+      "Developed dynamic web applications using React.js",
+      "Enhanced user experience and functionality, improving engagement by 15%",
+      "Collaborated with cross-functional teams to deliver high-quality solutions"
+    ]
+  },
+  {
+    role: "Artificial Intelligence Intern",
+    company: "Codec Technologies",
+    location: "India",
+    period: "Jan 2025 – Feb 2025",
+    type: "internship",
+    highlights: [
+      "Developed AI-powered applications using machine learning and deep learning techniques",
+      "Implemented natural language processing (NLP) algorithms to enhance user interaction",
+      "Improved model accuracy and efficiency, contributing to a 15% performance boost"
+    ]
+  },
+  {
+    role: "Tech Lead",
+    company: "Book with UVA",
+    location: "Delhi, India",
+    period: "Aug 2024 – Feb 2025",
+    type: "leadership",
+    highlights: [
+      "Led web application development with modern technologies",
+      "Enhanced usability and performance, resulting in a 20% increase in user satisfaction",
+      "Mentored team members and coordinated project deliverables"
+    ]
+  },
+  {
+    role: "Web Developer",
+    company: "CodSoft",
+    location: "Delhi, India",
+    period: "May 2024 – Jun 2024",
+    type: "internship",
+    highlights: [
+      "Created robust web solutions using React.js and Node.js",
+      "Optimized performance and user engagement, increasing conversion rates by 10%",
+      "Delivered projects on time with high-quality code standards"
+    ]
+  }
+];
+
 export const projects = [
   {
     title: "HotelBook",

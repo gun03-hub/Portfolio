@@ -75,7 +75,7 @@ export default function About() {
               {technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="tech-tag"
+                  className="tech-tag hover:scale-110 hover:bg-primary-500/20 transition-all duration-300 cursor-default"
                   data-aos="fade-up"
                   data-aos-delay={index * 50}
                 >
@@ -86,37 +86,37 @@ export default function About() {
           </div>
 
           <div className="relative" data-aos="fade-left">
-            <div className="glass-card p-5 xs:p-6 md:p-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 xs:w-32 h-24 xs:h-32 bg-primary-500/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-20 xs:w-24 h-20 xs:h-24 bg-accent-purple/10 rounded-full blur-3xl" />
+            <div className="glass-card p-5 xs:p-6 md:p-8 relative overflow-hidden hover-glow transition-all">
+              <div className="absolute top-0 right-0 w-24 xs:w-32 h-24 xs:h-32 bg-primary-500/10 rounded-full blur-3xl animate-float-slow" />
+              <div className="absolute bottom-0 left-0 w-20 xs:w-24 h-20 xs:h-24 bg-accent-purple/10 rounded-full blur-3xl animate-float-delay-1" />
               
               <div className="relative z-10 space-y-4 xs:space-y-6">
-                <div className="flex items-center gap-3 xs:gap-4">
-                  <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-primary-500/20 flex items-center justify-center text-primary-400 flex-shrink-0">
+                <div className="flex items-center gap-3 xs:gap-4 group/stat">
+                  <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-primary-500/20 flex items-center justify-center text-primary-400 flex-shrink-0 group-hover/stat:animate-glow-pulse transition-all">
                     <CodeIcon className="text-xl xs:text-2xl" />
                   </div>
                   <div>
-                    <div className="text-xl xs:text-2xl font-bold text-white">3+ Years</div>
+                    <div className="text-xl xs:text-2xl font-bold text-white group-hover/stat:text-shimmer transition-all">3+ Years</div>
                     <div className="text-xs xs:text-sm text-dark-400">of Development Experience</div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 xs:gap-4">
-                  <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-accent-purple/20 flex items-center justify-center text-accent-purple flex-shrink-0">
+                <div className="flex items-center gap-3 xs:gap-4 group/stat">
+                  <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-accent-purple/20 flex items-center justify-center text-accent-purple flex-shrink-0 group-hover/stat:animate-glow-pulse transition-all">
                     <StorageIcon className="text-xl xs:text-2xl" />
                   </div>
                   <div>
-                    <div className="text-xl xs:text-2xl font-bold text-white">20+ Projects</div>
+                    <div className="text-xl xs:text-2xl font-bold text-white group-hover/stat:text-shimmer transition-all">20+ Projects</div>
                     <div className="text-xs xs:text-sm text-dark-400">Successfully Delivered</div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 xs:gap-4">
-                  <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-accent-cyan/20 flex items-center justify-center text-accent-cyan flex-shrink-0">
+                <div className="flex items-center gap-3 xs:gap-4 group/stat">
+                  <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg xs:rounded-xl bg-accent-cyan/20 flex items-center justify-center text-accent-cyan flex-shrink-0 group-hover/stat:animate-glow-pulse transition-all">
                     <BrushIcon className="text-xl xs:text-2xl" />
                   </div>
                   <div>
-                    <div className="text-xl xs:text-2xl font-bold text-white">5+ Certifications</div>
+                    <div className="text-xl xs:text-2xl font-bold text-white group-hover/stat:text-shimmer transition-all">5+ Certifications</div>
                     <div className="text-xs xs:text-sm text-dark-400">Professional Credentials</div>
                   </div>
                 </div>
@@ -129,14 +129,14 @@ export default function About() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="glass-card p-4 xs:p-5 md:p-6 group hover:border-primary-500/30 transition-all duration-300"
+              className="glass-card p-4 xs:p-5 md:p-6 group hover:border-primary-500/30 transition-all duration-300 hover-lift card-tilt"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className={`w-10 h-10 xs:w-12 xs:h-12 md:w-14 md:h-14 rounded-lg xs:rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center text-white mb-3 xs:mb-4 group-hover:scale-110 transition-transform`}>
+              <div className={`w-10 h-10 xs:w-12 xs:h-12 md:w-14 md:h-14 rounded-lg xs:rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center text-white mb-3 xs:mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-lg`}>
                 <span className="text-lg xs:text-xl md:text-2xl">{service.icon}</span>
               </div>
-              <h4 className="text-sm xs:text-base md:text-lg font-semibold text-white mb-1.5 xs:mb-2">{service.title}</h4>
+              <h4 className="text-sm xs:text-base md:text-lg font-semibold text-white mb-1.5 xs:mb-2 group-hover:text-primary-400 transition-colors">{service.title}</h4>
               <p className="text-dark-400 text-xs xs:text-sm leading-relaxed line-clamp-3">{service.description}</p>
             </div>
           ))}

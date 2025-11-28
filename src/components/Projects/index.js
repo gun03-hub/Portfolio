@@ -37,10 +37,10 @@ export default function Projects() {
               href="https://github.com/gun03-hub"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline inline-flex items-center gap-2"
+              className="btn-outline btn-ripple inline-flex items-center gap-2 group"
             >
               View More on GitHub
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </a>

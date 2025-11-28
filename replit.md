@@ -69,10 +69,16 @@ npm start
 
 ## Key Sections
 1. **Hero**: Introduction with typewriter, stats, and profile photo
-2. **About**: Overview, technologies, and service cards
-3. **Resume**: Education, certifications, and skill bars
+2. **About**: Overview, technologies, and service cards with hover animations
+3. **Resume**: Work experience timeline, education, certifications, and skill bars
 4. **Projects**: Grid of project cards with hover effects
 5. **Contact**: Contact form and social links
+
+## Work Experience (from Resume)
+- Web Developer at SPIE - The International Society (Jan 2024 – Present)
+- AI Intern at Codec Technologies (Jan 2025 – Feb 2025)
+- Tech Lead at Book with UVA (Aug 2024 – Feb 2025)
+- Web Developer at CodSoft (May 2024 – Jun 2024)
 
 ## Deployment
 Configured for Replit static deployment:
@@ -89,7 +95,23 @@ Configured for Replit static deployment:
 - **Touch interactions**: Disabled hover effects on touch devices, added active states
 - **ScrollToTop button**: Fixed button for easy navigation back to top on all devices
 
+## Animation Features
+- **Floating elements**: Subtle floating animations on background shapes
+- **Shimmer effects**: Gradient shimmer on skill bars and text
+- **Glow pulse**: Animated glow on icons and cards
+- **Hover animations**: Card lift, tilt, and scale effects
+- **Timeline dots**: Animated ripple effect on work experience timeline
+- **Button ripple**: Click ripple effect on action buttons
+- **Reduced motion support**: Respects prefers-reduced-motion for accessibility
+
 ## Recent Changes
+- November 28, 2025: Enhanced animations and work experience
+  - Added comprehensive CSS animation library (float, shimmer, glow, ripple)
+  - Added Work Experience timeline with 4 professional roles
+  - Enhanced About section with floating backgrounds and hover effects
+  - Added card tilt and lift animations on hover
+  - Button ripple effects across the site
+  - Accessibility support for reduced motion preferences
 - November 28, 2025: Major responsive design improvements
   - Enhanced all sections for mobile, tablet, and desktop
   - Added custom breakpoints for extra-small devices (320-375px)
