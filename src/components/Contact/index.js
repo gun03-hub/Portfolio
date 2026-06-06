@@ -64,8 +64,8 @@ export default function Contact() {
     {
       icon: <EmailIcon />,
       label: "Email",
-      value: "gunjan.arora@example.com",
-      link: "mailto:gunjan.arora@example.com",
+      value: "4518gunjanarora@gmail.com",
+      link: "mailto:4518gunjanarora@gmail.com",
     },
     {
       icon: <LocationOnIcon />,
@@ -256,13 +256,7 @@ export default function Contact() {
                 I'm currently available for freelance work and exciting opportunities. 
                 If you have a project that needs expertise, let's discuss it!
               </p>
-              <a
-                href={require("../../assets/files/Resume.pdf")}
-                download="Gunjan_Arora_Resume"
-                className="btn-outline inline-flex items-center gap-2"
-              >
-                Download Resume
-              </a>
+              
             </div>
           </div>
         </div>

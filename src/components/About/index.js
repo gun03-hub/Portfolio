@@ -32,10 +32,6 @@ export default function About() {
     },
   ];
 
-  const technologies = [
-    "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express",
-    "Python", "MongoDB", "PostgreSQL", "Firebase", "Tailwind CSS", "Git"
-  ];
 
   return (
     <section id="about" className="py-12 xs:py-16 md:py-24 relative">
@@ -55,7 +51,7 @@ export default function About() {
             </h3>
             
             <p className="text-sm xs:text-base text-dark-300 leading-relaxed">
-              I'm a passionate Full Stack Developer currently pursuing my BS in Computer Science 
+              I'm a passionate AI Full Stack Developer currently pursuing my BS in Computer Science 
               at the University of Delhi. With a strong foundation in both frontend and backend 
               technologies, I specialize in building scalable, user-centric applications.
             </p>
@@ -70,19 +66,6 @@ export default function About() {
               When I'm not coding, you'll find me exploring new technologies, contributing to 
               open-source projects, or sharing knowledge with the developer community.
             </p>
-
-            <div className="flex flex-wrap gap-1.5 xs:gap-2 pt-2 xs:pt-4">
-              {technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="tech-tag hover:scale-110 hover:bg-primary-500/20 transition-all duration-300 cursor-default"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 50}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div className="relative" data-aos="fade-left">
@@ -96,7 +79,7 @@ export default function About() {
                     <CodeIcon className="text-xl xs:text-2xl" />
                   </div>
                   <div>
-                    <div className="text-xl xs:text-2xl font-bold text-white group-hover/stat:text-shimmer transition-all">3+ Years</div>
+                    <div className="text-xl xs:text-2xl font-bold text-white group-hover/stat:text-shimmer transition-all">3 Years</div>
                     <div className="text-xs xs:text-sm text-dark-400">of Development Experience</div>
                   </div>
                 </div>
@@ -106,8 +89,8 @@ export default function About() {
                     <StorageIcon className="text-xl xs:text-2xl" />
                   </div>
                   <div>
-                    <div className="text-xl xs:text-2xl font-bold text-white group-hover/stat:text-shimmer transition-all">20+ Projects</div>
-                    <div className="text-xs xs:text-sm text-dark-400">Successfully Delivered</div>
+                    <div className="text-xl xs:text-2xl font-bold text-white group-hover/stat:text-shimmer transition-all">15+ Projects</div>
+                    <div className="text-xs xs:text-sm text-dark-400">Successfully Created</div>
                   </div>
                 </div>
 

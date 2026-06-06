@@ -333,7 +333,7 @@
 /* Button ripple effect */
 .btn-ripple {
   position: relative;
-  overflow: hidden;
+  : hidden;
 }
 
 .btn-ripple::after {
@@ -387,3 +387,4 @@
     transition-duration: 0.01ms !important;
   }
 }
+

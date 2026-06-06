@@ -3,12 +3,14 @@ import { NavLink } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Download } from "@mui/icons-material";
 import CloseIcon from "@mui/icons-material/Close";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [downloading, setDownloading] = useState(false);  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +62,7 @@ export default function Navigation() {
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    { id: "resume", label: "Resume" },
+    { id: "resume", label: "Career Overview" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];
@@ -80,11 +82,9 @@ export default function Navigation() {
             onClick={() => scrollToSection("home")}
             className="flex items-center gap-2 xs:gap-3 group"
           >
-            <div className="w-8 h-8 xs:w-10 xs:h-10 rounded-lg xs:rounded-xl bg-gradient-to-br from-primary-500 to-accent-purple flex items-center justify-center text-white font-bold text-base xs:text-lg">
-              G
-            </div>
+            
             <span className="text-lg xs:text-xl font-display font-semibold text-white group-hover:text-primary-400 transition-colors">
-              Gunjan<span className="text-primary-400">.</span>
+              Gunjan<span className="text-primary-400"></span>
             </span>
           </NavLink>
 
@@ -121,6 +121,21 @@ export default function Navigation() {
             >
               <LinkedInIcon />
             </a>
+            <a
+  href="/Resume.pdf"
+  download="Gunjan_Arora_Resume"
+  onClick={() => {
+    setDownloading(true);
+    setTimeout(() => setDownloading(false), 1200);
+  }}
+  className="btn-outline text-sm flex items-center gap-2"
+>
+  <Download className="text-base" />
+  {downloading ? "Downloading..." : "Download Resume"}
+</a>
+
+
+
             <button
               onClick={() => scrollToSection("contact")}
               className="btn-primary text-sm"
@@ -184,6 +199,18 @@ export default function Navigation() {
                 <LinkedInIcon className="text-2xl xs:text-3xl" />
               </a>
             </div>
+            <a
+  href="/Resume.pdf"
+  download="Gunjan_Arora_Resume"
+  onClick={() => {
+    setDownloading(true);
+    setTimeout(() => setDownloading(false), 1200);
+  }}
+  className="btn-outline text-sm flex items-center gap-2"
+>
+  <Download className="text-base" />
+  {downloading ? "Downloading..." : "Download Resume"}
+</a>
 
             <button
               onClick={() => scrollToSection("contact")}

@@ -5,7 +5,7 @@ export default function ProfileCard() {
     <div>
       <div className="relative">
         <img
-          src={require("../assets/images/profile-pic.png")}
+          src={require("../assets/images/profile-pic.jpeg")}
           alt="Gunjan Arora"
           className="rounded-full border-solid cursor-pointer  border-[6px]  border-neutral-800 shadow-md  min-h-fit mx-auto  max-w-[190px]"
         />
